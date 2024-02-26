@@ -62,4 +62,30 @@ function mathOperation(){
         result=parseFloat(result)%parseFloat(disInput)
     }
 }
+equal.addEventListener("click",()=>{
+if(!disHistory||!disInput)return;
+haveDot=false;
+mathOperation();
+clearVar();
+display.innerText=result
+tempResult.innerText="";
+disInput=result;
+disHistory="";
+})
+
+clearAll.addEventListener("click",()=>{
+    disHistory="";
+    displayHistory.innerText="";
+    disInput="";
+    display.innerText="";
+    haveDot=false;
+    result="";
+    tempResult="";
+    lastOperation="";
+})
+
+clearLast.addEventListener("click",()=>{
+    display.innerText="";
+    disInput=""
+})
 
